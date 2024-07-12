@@ -2,3 +2,67 @@
 @use '../global' as*;
 
 /* ======== header styles ========*/
+
+.sticky{
+    @include center-fixed(1200px)
+}
+
+header {
+    width:1200px;
+    margin: auto;
+    position: relative;
+    top: 50px;
+   
+    .navbar{
+        width: 100%;
+        height: 80px;
+        border-radius: 30px;
+        background-color: $white-primary;
+        box-shadow: generate-shadow($shadow-primary, 10);
+
+        .container {
+            @include generar-grid-custom(32% 65%, 3%);
+
+            .imageContent {
+                @include span(1, 1);
+
+                img {
+                    width: 180px;
+                    object-fit: contain;
+                    display: block;
+                    margin: auto
+                }
+            }
+
+            .navContent {
+                max-width: 800px;
+                @include span(2, 3);
+
+                ul {
+                    max-width: 90%;
+                    height: 80px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: auto;
+
+                    li {
+                        list-style: none;
+                        margin: auto;
+
+                        a {
+                            outline: none;
+                            text-decoration: none;
+                            color: $background-grey;
+                            font-family: $font-roboto;
+                        }
+
+                        a:hover {
+                            color: aqua;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
