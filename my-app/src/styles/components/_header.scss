@@ -3,17 +3,17 @@
 
 /* ======== header styles ========*/
 
-.sticky{
+.sticky {
     @include center-fixed(1200px)
 }
 
 header {
-    width:1200px;
+    width: 1200px;
     margin: auto;
     position: relative;
     top: 50px;
-   
-    .navbar{
+
+    .navbar {
         width: 100%;
         height: 80px;
         border-radius: 30px;
@@ -27,10 +27,10 @@ header {
                 @include span(1, 1);
 
                 img {
-                    width: 180px;
+                    width: 300px;
                     object-fit: contain;
                     display: block;
-                    margin: auto
+                    margin: 5px auto;
                 }
             }
 
@@ -57,12 +57,157 @@ header {
                         }
 
                         a:hover {
-                            color: aqua;
+                            padding: 28px 0px;
+                            color: $blue-primary;
+                            border-bottom: solid $blue-primary;
+                            transition: height 0.3s ease;
                         }
                     }
                 }
             }
+
+            .nav-mobile {
+                display: none;
+            }
         }
     }
 
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        width: 100% !important;
+        margin: auto;
+        position: fixed !important;
+        top: 0 !important;
+
+        .navbar {
+            border-radius: 0px !important;
+            box-shadow: none;
+
+            .container {
+                @include generar-grid-custom(65% 32%, 3%);
+
+                .imageContent {
+                    img {
+                        width: 260px;
+                        object-fit: contain;
+                        display: block;
+                        margin: 10px auto;
+                    }
+                }
+
+                .navContent {
+                    display: none !important;
+                }
+
+                .nav-mobile {
+                    transition: width .2s ease !important;
+                    position: absolute;
+                    z-index: 1000;
+                    width: 0px;
+                    height: 100vh;
+                    display: block !important;
+                    background: $white-primary;
+                    box-shadow: generate-shadow($shadow-primary, 5);
+
+                    .menu-wrapper {
+                        width: 100%;
+                        height: 100%;
+ 
+                        .menu-contain {
+                            img {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+
+                .nav-button {
+                    display: block;
+                    position: absolute;
+                    margin-top: 5%;
+                    right: 6%;
+                    background-image: url('https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Fmenu.png?alt=media&token=41c285f2-0099-45d9-a6f0-50a945d9b988');
+                    width: 35px;
+                    height: 35px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    z-index: 100;
+                }
+
+                .nav-button-close {
+                    display: none;
+                    position: absolute;
+                    margin-top: 5%;
+                    right: 4%;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Farrow.png?alt=media&token=2378edd3-f605-40b5-9ad3-b20782c406d1');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    z-index: 100;
+                }
+
+                ul {
+                    display: none !important;
+                }
+            }
+
+            .open {
+
+                .nav-button {
+                    display: none !important;
+                }
+
+                .nav-button-close {
+                    display: block !important;
+                }
+
+                .nav-mobile {
+                    transition: width .2s ease !important;
+                    width: 365px;
+
+                    .menu-wrapper {
+                        .menu-contain {
+                            height: 100%;
+
+                            img {
+                                width: 260px;
+                                object-fit: contain;
+                                display: block;
+                                margin: 10px;
+                            }
+
+                            ul {
+                                display: block !important;
+                                margin: 50px auto;
+                                padding-bottom: 30px;
+                                border-bottom: solid .5px $blue-primary;
+
+                                li {
+                                    text-align: left;
+                                    padding: 10px 10% !important;
+                                    list-style: none;
+                                    margin: auto;
+
+                                    a {
+                                        outline: none;
+                                        text-decoration: none;
+                                        color: $background-grey;
+                                        font-family: $font-roboto;
+                                        font-size: $sizes-h4;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
 }
