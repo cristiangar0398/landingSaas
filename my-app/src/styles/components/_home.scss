@@ -1,0 +1,42 @@
+/* ======== global requirements ========*/
+@use '../global' as*;
+
+.home-section {
+    width:100%;
+    min-width: 1200px;
+    height: 1800px;
+
+
+    .grid-container{
+        max-width: 1200px;
+        margin: 30px auto;
+        @include generar-grid-custom(1fr 1.5fr, 3%);
+        .text-section {
+            height: 300px;
+            display: block;
+            margin: auto;
+            @include animation-primary();
+            h2 {
+                font-family: $font-roboto ;
+                font-size: $sizes-h1;
+                color: $text-primary;
+                visibility: visible;
+                animation-delay: 0.1s;
+                animation-name: fadeInUp; 
+            }
+            button{
+                @include button($blue-primary , $white-primary , 20px);
+                box-shadow: generate-shadow($shadow-primary, 5);
+                margin: 30px 0px;
+            }
+        }
+    
+        .image-section{
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+}

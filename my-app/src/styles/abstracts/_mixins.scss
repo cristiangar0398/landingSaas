@@ -24,4 +24,39 @@
   transform: translateX(-50%);
   margin: 0;
   width: $width;
+  z-index: 1000;
+}
+
+@mixin button($color , $text-color, $font-size) {
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+  background-color: $color;
+  color: $text-color;
+  border: none;
+  border-radius: 20px;
+  font-size: $font-size;
+}
+
+@mixin animation-primary() {
+  visibility: visible;
+  animation-name: fadeInUp;
+  animation-duration: 1s; // Añadir duración de la animación
+  animation-delay: .8s;
+  animation-fill-mode: both; // Asegura que el estado final de la animación se mantenga
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
