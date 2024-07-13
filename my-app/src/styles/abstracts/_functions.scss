@@ -1,0 +1,6 @@
+@function generate-shadow($color, $intensidad) {
+    $offset: $intensidad * 1px;
+    $blur: $intensidad * 2px;
+    $spread: $intensidad * 0.5px;
+    @return $offset $offset $blur $spread rgba($color, 0.3);
+}

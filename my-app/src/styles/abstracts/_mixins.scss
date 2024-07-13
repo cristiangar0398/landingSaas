@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as*;
+
+@mixin generar-grid-standard($total-columnas, $gutter-width) {
+  display: grid;
+  grid-template-columns: repeat($total-columnas, 1fr);
+  gap: $gutter-width;
+}
+
+@mixin generar-grid-custom($column-sizes, $gutter-width) {
+  display: grid;
+  grid-template-columns: $column-sizes;
+  gap: $gutter-width;
+}
+
+@mixin span($start, $col-span) {
+  grid-column-start: $start;
+  grid-column-end: span $col-span;
+}
+
+@mixin center-fixed($width) {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  width: $width;
+}

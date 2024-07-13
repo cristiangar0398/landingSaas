@@ -1,0 +1,33 @@
+/* =============== IMPORTS =============== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* =============== COLORS =============== */
+$red-primary :  #d00;
+$white-primary : #fff;
+$background-black : #000;
+$background-grey : #2b2c2d;
+$shadow-primary : #c1c1c1;
+$blue-primary : #248abf;
+
+
+/* =============== FONTS =============== */
+$font-roboto : "Roboto", sans-serif;
+$font-bebas :  "Bebas Neue", sans-serif;
+
+/* =============== FONTS SIZES =============== */
+$sizes-h1 : 2.5rem;
+$sizes-h2 : 2rem;
+$sizes-h3 : 1.75rem;
+$sizes-h4 : 1.5rem;
+$sizes-h5 : 1.25rem;
+$sizes-h6 : 1rem;
+$weight : 400;
+$weight-medium : 700;
+$weight-max : 800;
+/* =============== SPACING =============== */
+
+/* =============== MEDIA QUIERES =============== */
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large-desktop: 1200px;
