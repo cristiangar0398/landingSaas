@@ -4,7 +4,11 @@
 /* ======== header styles ========*/
 
 .sticky {
-    @include center-fixed(1200px)
+    @include center-fixed(1200px);
+
+    .navbar{
+        border-radius: 0px 0px 30px 30px !important;
+    }
 }
 
 header {
@@ -12,12 +16,14 @@ header {
     margin: auto;
     position: relative;
     top: 50px;
+    z-index: 1000;
 
     .navbar {
         width: 100%;
         height: 80px;
         border-radius: 30px;
-        background-color: $white-primary;
+        background-color: transparent;
+        backdrop-filter: blur(8px);
         box-shadow: generate-shadow($shadow-primary, 10);
 
         .container {
