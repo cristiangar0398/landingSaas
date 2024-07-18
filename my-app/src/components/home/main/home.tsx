@@ -1,13 +1,50 @@
+"use client"
+
+import { useState, useEffect } from 'react';
+import imagesData from '../../../jsonFiles/homeImages.json'
+
+interface Images {
+    webSiteimage: string;
+    HtmlImage: string;
+    CssImage: string;
+    CImage: string;
+    CloudImage: string;
+    leaves: string;
+    dev: string;
+    red: string;
+}
+
 export default function HomeSection() {
+
+    const [Images, setImages] = useState<Images | null>(null);
+
+    useEffect(() => {
+        setImages(imagesData);
+    }, []);
+
     return (
+
         <section className="home-section">
-            <div className="grid-container">
-                <div className="text-section">
-                    <h2>Promovemos soluciones tecnologicas de bajo costo</h2>
-                    <button>Iniciemos</button>
+            <div className="gridContainer">
+                <div className="textSection">
+                    <h2>Alcancemos tu meta juntos</h2>
+                    <p>Acelera tu camino al éxito. Transforma tus metas en realidad con soluciones de calidad. Déjanos llevar tu idea al siguiente nivel.</p>
+                    <button> Hagamos tu idea realidad </button>
                 </div>
-                <div className="image-section">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2FPurple%20Modern%20Website%20Development%20Instagram.%20Post.png?alt=media&token=b622d52a-3424-410a-a4e8-9f0635e4b7d1" alt="" />
+                <div className="imageSection">
+                    {Images ? <img src={Images.red} alt=""id="red" /> : <p>Cargando...</p>}
+                    {Images ? <img src={Images.webSiteimage} alt="" className="webSite" /> : <p>Cargando...</p>}
+                    <div className="developmentIdioms">
+                        {Images ? <img src={Images.HtmlImage} alt="" id="HtmlImage" /> : <p>Cargando...</p>}
+                        {Images ? <img src={Images.CssImage} alt="" id="CssImage" /> : <p>Cargando...</p>}
+                        {Images ? <img src={Images.CImage} alt="" id="CImage" /> : <p>Cargando...</p>}
+                        {Images ? <img src={Images.dev} alt="" id="dev" /> : <p>Cargando...</p>}
+                    </div>
+                    <div className='CloudImageContainer' >
+                        {Images ? <img src={Images.CloudImage} alt="" id="cloud1" /> : <p>Cargando...</p>}
+                        {Images ? <img src={Images.CloudImage} alt="" id="cloud2" /> : <p>Cargando...</p>}
+                    </div>
+                    {Images ? <img src={Images.leaves} alt=""id="leaves" /> : <p>Cargando...</p>}
                 </div>
             </div>
         </section>

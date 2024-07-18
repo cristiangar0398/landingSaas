@@ -4,7 +4,9 @@ import HomeSection from '@/components/home/main/home';
 
 export default function Home() {
   return (
-    <HomeSection></HomeSection>
+    <main>
+      <HomeSection></HomeSection>
+    </main>
   );
 }
 

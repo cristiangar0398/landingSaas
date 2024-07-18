@@ -27,9 +27,9 @@
   z-index: 1000;
 }
 
-@mixin button($color , $text-color, $font-size) {
-  width: 150px;
-  padding: 10px;
+@mixin button($color , $text-color, $font-size , $width , $padding) {
+  width: $width;
+  padding: $padding;
   margin: auto;
   background-color: $color;
   color: $text-color;
@@ -38,12 +38,63 @@
   font-size: $font-size;
 }
 
-@mixin animation-primary() {
+@mixin animation-primary($duration , $delay) {
   visibility: visible;
   animation-name: fadeInUp;
-  animation-duration: 1s; // Añadir duración de la animación
-  animation-delay: .8s;
-  animation-fill-mode: both; // Asegura que el estado final de la animación se mantenga
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: both;
+}
+
+@mixin animation-left($duration , $delay) {
+  visibility: visible;
+  animation-name: fadeInLeft;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: both;
+}
+
+@mixin typing ($letter-spacing) {
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: $letter-spacing ;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@mixin zoomAnimation ($duration , $type) {
+  animation: zoom $duration $type;
+}
+
+@mixin levitar($duration , $type) {
+  animation: transition_levitar $duration $type;
+}
+
+@mixin levitarY($duration , $type) {
+  animation: transitionY $duration $type;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
 }
 
 
@@ -58,5 +109,57 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes transition_levitar {
+  0% {
+    transform: translate(50%);
+  }
+
+  50% {
+    transform: translate(300%, -50px);
+  }
+
+  100% {
+    transform: translate(50%);
+  }
+}
+
+@keyframes transitionY {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+
+  100% {
+    transform: translate(0);
   }
 }
