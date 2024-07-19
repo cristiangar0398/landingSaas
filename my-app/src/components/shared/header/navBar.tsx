@@ -1,5 +1,6 @@
 "use client"
 
+import { Scrolling } from "@/services/scrolling";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -21,18 +22,7 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 35) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    Scrolling(35, setIsSticky);  
   }, []);
 
   const handleMenuToggle = () => {

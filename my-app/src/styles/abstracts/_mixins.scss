@@ -27,7 +27,8 @@
   z-index: 1000;
 }
 
-@mixin button($color , $text-color, $font-size , $width , $padding) {
+@mixin button($color , $text-color, $font-size , $width , $padding , $display) {
+  display: $display;
   width: $width;
   padding: $padding;
   margin: auto;
@@ -49,6 +50,22 @@
 @mixin animation-left($duration , $delay) {
   visibility: visible;
   animation-name: fadeInLeft;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: both;
+}
+
+@mixin animation-right($duration , $delay) {
+  visibility: visible;
+  animation-name: fadeInRight;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: both;
+}
+
+@mixin reverse-animation($duration , $delay){
+  visibility: visible;
+  animation-name: reverseFadeInUp;
   animation-duration: $duration;
   animation-delay: $delay;
   animation-fill-mode: both;
@@ -112,6 +129,20 @@
   }
 }
 
+@keyframes reverseFadeInUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -123,6 +154,18 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); 
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); 
   }
 }
 
