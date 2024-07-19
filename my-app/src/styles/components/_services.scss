@@ -1,0 +1,195 @@
+@use '../global' as*;
+
+.servicesSection {
+    width: 100%;
+    min-width: 1200px;
+    height: auto;
+    margin: 30px auto;
+
+    .headContainer {
+        width: 100%;
+        margin: 50px auto;
+        padding: 0px 30px;
+
+        h3 {
+            font-size: $sizes-l;
+            color: $background-grey;
+            text-align: center;
+            margin: 20px 0px;
+
+            span {
+                color: $blue-primary;
+            }
+        }
+
+        p {
+            text-align: center;
+            margin-top: 70px;
+            font-size: $sizes-h5;
+        }
+    }
+
+    .scroll {
+        #product-1 {
+            @include animation-left(.8s, 1s);
+        }
+
+        #product-2 {
+            @include animation-primary(.8s, 1s);
+        }
+
+        #product-3 {
+            @include animation-left(1.6s, 1.6s);
+        }
+
+        #product-4 {
+            @include animation-primary(1.6s, 1.6s);
+        }
+    }
+
+    .gridContainer {
+        @include generar-grid-custom(1fr 1fr, 5%);
+        max-width: 1200px;
+        height: 1300px;
+        margin: auto;
+
+        #product-1 {
+            background-color: $blue-primary ;
+
+            h3 {
+                font-family: $font-roboto ;
+                font-size: $sizes-h3;
+                color: $white-primary !important;
+                padding-bottom: 20px;
+            }
+
+            p {
+                color: $white-primary !important;
+                font-size: $sizes-h5;
+                font-family: $font-roboto;
+            }
+
+            a {
+                @include button($white-primary , $blue-primary , 18px, fit-content, 10px 15px, block);
+            }
+        }
+
+        #product-2 {
+            margin-top: 120px;
+            background-color: $background-secundary ;
+        }
+
+        #product-3 {
+            background-color: $background-secundary ;
+        }
+
+        #product-4 {
+            margin-top: 120px;
+            background-color: $blue-primary ;
+
+            h3 {
+                font-family: $font-roboto ;
+                font-size: $sizes-h3;
+                color: $white-primary !important;
+                padding-bottom: 20px;
+            }
+
+            p {
+                color: $white-primary !important;
+                font-size: $sizes-h5;
+                font-family: $font-roboto;
+            }
+
+            a {
+                @include button($white-primary , $blue-primary , 18px, fit-content, 10px 15px, block);
+            }
+        }
+
+
+        .serviceItem {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: generate-shadow($shadow-primary, 8);
+            @include reverse-animation(.5s, .5s);
+
+            h3 {
+                font-family: $font-roboto ;
+                font-size: $sizes-h3;
+                color: $text-primary;
+                padding-bottom: 20px;
+            }
+
+            p {
+                color: $background-black;
+                font-size: $sizes-h5;
+                font-family: $font-roboto;
+                margin-bottom: 45px;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0px;
+                left: 10%;
+                width: 80%;
+                object-fit: cover
+            }
+
+            a {
+                @include button($blue-primary , $white-primary , 18px, fit-content, 10px 15px, block);
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: $text-primary;
+                @include zoomAnimation(1s, infinite);
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .servicesSection {
+        min-width: 300px;
+        margin: auto;
+
+        .headContainer {
+            width: 100%;
+            margin: 50px auto;
+            padding: 0px 30px;
+    
+            h3 {
+                font-size: $sizes-h2;
+    
+                span {
+                    color: $blue-primary;
+                }
+            }
+    
+            p {
+                margin-top: 30px;
+                font-size: $sizes-h6;
+            }
+        }
+
+
+        .gridContainer {
+            @include generar-grid-custom(1fr, 3%);
+            max-width: 90%;
+            height: 1300px;
+
+            #product-2 {
+                margin-top: 0px;
+            }
+
+            #product-4 {
+                margin-top: 0px;
+            }
+
+        }
+    }
+}

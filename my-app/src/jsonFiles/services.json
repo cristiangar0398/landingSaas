@@ -1,0 +1,30 @@
+[
+    {
+        "id" : "1",
+        "title": "Desarrollo Web y App Móviles",
+        "description": "Creamos aplicaciones utilizando las tecnologías más innovadoras del mercado. Nos especializamos en el desarrollo de aplicaciones móviles con React Native y Flutter, así como en el desarrollo web con Next.js, Angular y React.js.",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2FappMobile.png?alt=media&token=35055e8c-b9a2-43c1-98e1-c76e49bdbe96",
+        "url": "/"
+    },
+    {
+        "id" : "2",
+        "title": "redes y cableado estructurado",
+        "description": "Ofrecemos soluciones avanzadas en redes y telecomunicaciones, optimizando la conectividad y garantizando la eficiencia de su infraestructura tecnológica.",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Fteleco.png?alt=media&token=e7f67c55-e6e2-4c8c-bfde-4827d0549939",
+        "url": "/"
+    },
+    {
+        "id" : "3",
+        "title": "API e Integraciones",
+        "description": "Soluciones de desarrollo de backend con Sprint , Nodejs , Python tres de las mejores opciones del mercado.",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Fapis.png?alt=media&token=cf4f0547-a812-42d4-a581-c7f971647aa5",
+        "url": "/"
+    },
+    {
+        "id" : "4",
+        "title": "Marketing Digital",
+        "description": "Optimización para motores de búsqueda (SEO), marketing en motores de búsqueda (SEM) y gestión de redes sociales.",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Fmarketing%20digital.png?alt=media&token=076ce8c4-e6f6-4b84-a62f-68ff1fb02c09",
+        "url": "/"
+    }
+]
