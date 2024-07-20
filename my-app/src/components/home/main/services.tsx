@@ -10,7 +10,6 @@ interface Response {
 }
 
 interface service {
-    id: string,
     title: string;
     description: string;
     imageUrl: string;
@@ -38,7 +37,7 @@ export default function ServicesSection() {
             <div className={isScroll ? "scroll gridContainer" : "gridContainer"}>
                 {Response ? (
                     Response.data.map((service, index) => (
-                        <div key={index} className="serviceItem" id={`product-${service.id}`}>
+                        <div key={index} className="serviceItem" id={`product-${index + 1}`}>
                             <h3>{service.title}</h3>
                             <p>{service.description}</p>
                             <a href={service.url} target="_blank">

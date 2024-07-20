@@ -3,21 +3,9 @@
 import { Scrolling } from "@/services/scrolling";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import MenuList from "./menuList";
 
-function MenuList() {
-  return (
-    <ul>
-      <li> <Link href="/"> Home</Link></li>
-      <li> <Link href="#servicios"> about us</Link></li>
-      <li> <Link href="/products"> products</Link></li>
-      <li> <Link href="/services"> services</Link></li>
-      <li> <Link href="/skills"> skills</Link></li>
-      <li> <Link href="#servicios2">contacts</Link></li>
-    </ul>
-  );
-}
-
-export default function Nav() {
+export default function Nav( ) {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

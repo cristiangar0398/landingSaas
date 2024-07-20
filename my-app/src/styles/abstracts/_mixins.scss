@@ -1,8 +1,8 @@
 @use '../abstracts/variables' as*;
 
-@mixin generar-grid-standard($total-columnas, $gutter-width) {
+@mixin generar-grid-rows($total-rows, $fr , $gutter-width) {
   display: grid;
-  grid-template-columns: repeat($total-columnas, 1fr);
+  grid-template-rows: repeat($total-rows, $fr);
   gap: $gutter-width;
 }
 
@@ -39,6 +39,35 @@
   font-size: $font-size;
 }
 
+@mixin NavItem($color , $font-family , $color-hover) {
+  ul {
+    max-width: 90%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    li {
+      list-style: none;
+      margin: auto;
+
+      a {
+        outline: none;
+        text-decoration: none;
+        color: $color;
+        font-family: $font-family;
+      }
+
+      a:hover {
+        padding: 28px 0px;
+        color: $color-hover;
+        border-bottom: solid $color-hover;
+        transition: height 0.3s ease;
+      }
+    }
+  }
+}
+
 @mixin animation-primary($duration , $delay) {
   visibility: visible;
   animation-name: fadeInUp;
@@ -63,7 +92,7 @@
   animation-fill-mode: both;
 }
 
-@mixin reverse-animation($duration , $delay){
+@mixin reverse-animation($duration , $delay) {
   visibility: visible;
   animation-name: reverseFadeInUp;
   animation-duration: $duration;
@@ -160,12 +189,12 @@
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    transform: translateX(100%); 
+    transform: translateX(100%);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0); 
+    transform: translateX(0);
   }
 }
 
