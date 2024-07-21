@@ -9,7 +9,6 @@ export default function Home() {
     <main>
       <HomeSection></HomeSection>
       <ServicesSection></ServicesSection>
-      <ContactForm></ContactForm>
     </main>
   );
 }
