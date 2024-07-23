@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import SocialData from '../../../jsonFiles/social.json'
 import MenuList from "../header/menuList";
+import Image from 'next/image';
 
 
 
@@ -35,7 +36,7 @@ export default function Footer() {
                     <div className="social">
                         {ImagesData ? (
                             ImagesData.socialImages.map((service, index) => (
-                                <img src={service} alt="" id={`image-${index}`} />
+                                <Image src={service} alt="" id={`image-${index}`} key={index} width={50} height={50}/>
                             ))
                         ) : (
                             <p>cargando ...</p>

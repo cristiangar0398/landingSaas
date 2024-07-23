@@ -109,6 +109,10 @@
 
         .infoContactFrom {
 
+            span {
+                display: none;
+            }
+
             .send-ok {
                 display: block !important;
                 right: 25px !important;

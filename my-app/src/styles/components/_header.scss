@@ -34,6 +34,7 @@ header {
 
                 img {
                     width: 300px;
+                    height: auto;
                     object-fit: contain;
                     display: block;
                     margin: 5px auto;
@@ -70,6 +71,7 @@ header {
 
                 .imageContent {
                     img {
+                        height: auto;
                         width: 260px;
                         object-fit: contain;
                         display: block;
@@ -158,6 +160,7 @@ header {
                                 object-fit: contain;
                                 display: block;
                                 margin: 10px;
+                                height: auto;
                             }
 
                             ul {

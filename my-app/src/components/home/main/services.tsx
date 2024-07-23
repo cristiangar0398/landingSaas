@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import servicesData from '../../../jsonFiles/services.json'
 import { Scrolling } from '@/services/scrolling';
 import { IsMobileDevice } from '@/services/isDevice';
+import Image from 'next/image';
 
 interface Response {
     data: service[];
@@ -43,7 +44,7 @@ export default function ServicesSection() {
                             <a href={service.url} target="_blank">
                                 Más información
                             </a>
-                            <img src={service.imageUrl} alt={service.title} />
+                            <Image src={service.imageUrl} alt={service.title} width={400} height={250}/>
                         </div>
                     ))
                 ) : (

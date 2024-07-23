@@ -49,12 +49,14 @@
 
         .imageSection {
             width: 100%;
+            height: auto;
 
             .webSite {
                 width: 60%;
                 display: block;
                 margin: auto;
                 object-fit: cover;
+                height: auto;
             }
 
             #red {
@@ -62,6 +64,7 @@
                 width: 60px;
                 right: 190px;
                 top: 70px;
+                height: auto;
                 @include levitarY(2.7s, infinite);
             }
 
@@ -70,6 +73,7 @@
                 width: 97px;
                 left: 60%;
                 bottom: 90px;
+                height: auto;
                 @include animation-primary(.5s, 1s);
             }
 
@@ -81,6 +85,7 @@
 
                 img {
                     width: 60px;
+                    height: auto;
                     @include levitar(20.7s, infinite);
                 }
             }
@@ -95,6 +100,7 @@
                 img {
                     position: relative;
                     width: 100%;
+                    height: auto;
                 }
 
                 img:hover {

@@ -1,7 +1,7 @@
 "use client"
 
 import { Scrolling } from "@/services/scrolling";
-import Link from "next/link";
+import Image from 'next/image';
 import { useEffect, useState } from "react";
 import MenuList from "./menuList";
 
@@ -22,7 +22,7 @@ export default function Nav( ) {
       <nav className="navbar">
         <div className={`container ${isMenuOpen ? 'open' : ''}`}>
           <div className="imageContent">
-            <img src="https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Flogo%20ecoret.png?alt=media&token=85265186-3e48-4a19-b8e4-7d5371ae118b" alt="" />
+            <Image src="https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Flogo%20ecoret.png?alt=media&token=85265186-3e48-4a19-b8e4-7d5371ae118b" alt="" width={100} height={50}/>
           </div>
           <div className="navContent">
             <MenuList />
@@ -32,7 +32,7 @@ export default function Nav( ) {
           <div className="nav-mobile">
             <div className='menu-wrapper'>
               <div className='menu-contain'>
-              <img src="https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Flogo%20ecoret.png?alt=media&token=85265186-3e48-4a19-b8e4-7d5371ae118b" alt="" />
+              <Image src="https://firebasestorage.googleapis.com/v0/b/albalonweb.appspot.com/o/Identidad%20Grafica%2Flogo%20ecoret.png?alt=media&token=85265186-3e48-4a19-b8e4-7d5371ae118b" alt="" width={100} height={50} />
                 <MenuList />
               </div>
             </div>

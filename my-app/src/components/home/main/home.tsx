@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import imagesData from '../../../jsonFiles/homeImages.json'
 import ContactForm from '@/components/shared/contacts/ContactForm';
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 
 interface Images {
@@ -27,30 +27,37 @@ export default function HomeSection() {
     }, []);
 
     return (
-
         <section className="home-section">
             <div className="gridContainer">
                 <div className="textSection">
                     <h2>Alcancemos tu meta juntos</h2>
-                    <p>Acelera tu camino al éxito. Transforma tus metas en realidad con soluciones de calidad. Déjanos llevar tu idea al siguiente nivel.</p>
+                    <p>
+                        Acelera tu camino al éxito. Transforma tus metas en realidad con soluciones de calidad. Déjanos llevar tu idea al siguiente nivel.
+                    </p>
                     <button onClick={() => setShowComponent(true)}>
                         Hagamos tu idea realidad
                     </button>
                 </div>
                 <div className="imageSection">
-                    {Images ? <img src={Images.red} alt="" id="red" /> : <p>Cargando...</p>}
-                    {Images ? <img src={Images.webSiteimage} alt="" className="webSite" /> : <p>Cargando...</p>}
-                    <div className="developmentIdioms">
-                        {Images ? <img src={Images.HtmlImage} alt="" id="HtmlImage" /> : <p>Cargando...</p>}
-                        {Images ? <img src={Images.CssImage} alt="" id="CssImage" /> : <p>Cargando...</p>}
-                        {Images ? <img src={Images.CImage} alt="" id="CImage" /> : <p>Cargando...</p>}
-                        {Images ? <img src={Images.dev} alt="" id="dev" /> : <p>Cargando...</p>}
-                    </div>
-                    <div className='CloudImageContainer' >
-                        {Images ? <img src={Images.CloudImage} alt="" id="cloud1" /> : <p>Cargando...</p>}
-                        {Images ? <img src={Images.CloudImage} alt="" id="cloud2" /> : <p>Cargando...</p>}
-                    </div>
-                    {Images ? <img src={Images.leaves} alt="" id="leaves" /> : <p>Cargando...</p>}
+                    {Images ? (
+                        <>
+                            <Image src={Images.red} alt="" id="red" width={500} height={300} />
+                            <Image src={Images.webSiteimage} alt="" className="webSite" width={500} height={300} />
+                            <div className="developmentIdioms">
+                                <Image src={Images.HtmlImage} alt="" id="HtmlImage" width={100} height={100} />
+                                <Image src={Images.CssImage} alt="" id="CssImage" width={100} height={100} />
+                                <Image src={Images.CImage} alt="" id="CImage" width={100} height={100} />
+                                <Image src={Images.dev} alt="" id="dev" width={100} height={100} />
+                            </div>
+                            <div className='CloudImageContainer'>
+                                <Image src={Images.CloudImage} alt="" id="cloud1" width={200} height={200} />
+                                <Image src={Images.CloudImage} alt="" id="cloud2" width={200} height={200} />
+                            </div>
+                            <Image src={Images.leaves} alt="" id="leaves" width={300} height={300} />
+                        </>
+                    ) : (
+                        <p>Cargando...</p>
+                    )}
                 </div>
             </div>
             {showComponent && (
