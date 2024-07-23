@@ -29,6 +29,22 @@
                 color: $background-grey;
                 margin: 20px 0px;
             }
+
+            .send-ok{
+                display: block !important;
+            }
+
+            .send{
+                position: absolute;
+                bottom: 110px;
+                width: 200px;
+                display: none;
+                p{
+                    font-size: $sizes-h6;
+                    font-weight: 600;
+                    color: $blue-primary;
+                }
+            }
         }
 
         position: relative;
@@ -42,7 +58,7 @@
         border-radius: 30px;
         padding: 50px;
         box-shadow: generate-shadow($shadow-primary, 10);
-        @include generar-grid-custom(1fr 1.5fr, 3%);
+        @include generar-grid-custom(1fr 1.5fr, 4%);
 
         form {
 

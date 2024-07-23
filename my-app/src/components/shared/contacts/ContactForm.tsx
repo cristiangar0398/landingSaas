@@ -1,12 +1,14 @@
 "use client"
 
 import { useState, FormEvent } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface ContactFormComponentProps {
   onClose: () => void;
 }
 
 const ContactForm: React.FC<ContactFormComponentProps> = ({ onClose }) => {
+  const elementoRef = useRef<HTMLHeadingElement>(null);
   const [formData, setFormData] = useState<{ [key: string]: string }>({
     firstName: '',
     phone: '',
@@ -37,6 +39,7 @@ const ContactForm: React.FC<ContactFormComponentProps> = ({ onClose }) => {
 
       if (res.ok) {
         console.log('Email sent successfully');
+        elementoRef.current ?  elementoRef.current.classList.add('send-ok') : console.error('Fetch error:') ;
       } else {
         console.log('Error sending email');
       }
@@ -52,6 +55,9 @@ const ContactForm: React.FC<ContactFormComponentProps> = ({ onClose }) => {
           <h4>CONTACTO</h4>
           <p>Dejanos saber como podemos ayudarte, en breve te contactaremos.</p>
           <span>servicioalcliente@ecoret.com.co</span>
+          <div id='send-ok' className='send' ref={elementoRef}>
+            <p>¡ Pronto nos pondremos en contacto contigo !</p>
+          </div>
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="">
