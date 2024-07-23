@@ -36,9 +36,6 @@ export default function HomeSection() {
                     <button onClick={() => setShowComponent(true)}>
                         Hagamos tu idea realidad
                     </button>
-                    {showComponent && (
-                        <ContactForm onClose={() => setShowComponent(false)} />
-                    )}
                 </div>
                 <div className="imageSection">
                     {Images ? <img src={Images.red} alt="" id="red" /> : <p>Cargando...</p>}
@@ -56,7 +53,9 @@ export default function HomeSection() {
                     {Images ? <img src={Images.leaves} alt="" id="leaves" /> : <p>Cargando...</p>}
                 </div>
             </div>
+            {showComponent && (
+                <ContactForm onClose={() => setShowComponent(false)} />
+            )}
         </section>
-
     );
 }

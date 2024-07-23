@@ -3,10 +3,10 @@
 import { useState, FormEvent } from 'react';
 
 interface ContactFormComponentProps {
-  onClose: () => void; 
+  onClose: () => void;
 }
 
-const ContactForm : React.FC<ContactFormComponentProps> = ({ onClose }) =>{
+const ContactForm: React.FC<ContactFormComponentProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<{ [key: string]: string }>({
     firstName: '',
     phone: '',
@@ -85,23 +85,23 @@ const ContactForm : React.FC<ContactFormComponentProps> = ({ onClose }) =>{
             />
           </label>
           <label htmlFor="">
+            Cuentanos tu maravillosa idea
             <textarea
               name='message'
               placeholder="john@acme.com"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             />
-            Cuentanos tu maravillosa idea
           </label>
           <button type="submit">Enviar</button>
         </form>
+        <button type="button" id='close-button' onClick={onClose}>
+          Cerrar
+        </button>
       </div>
-      <button type="button" onClick={onClose}>
-        Cerrar
-      </button>
     </section>
 
   );
 }
 
-export default ContactForm ;
+export default ContactForm;
