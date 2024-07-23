@@ -17,29 +17,30 @@
 
     .gridConten {
 
-        .infoContactFrom{
-            h4{
+        .infoContactFrom {
+            h4 {
                 font-family: $font-roboto;
                 font-size: $sizes-h4;
                 color: $text-primary;
             }
 
-            p{
+            p {
                 font-size: $sizes-h6;
                 color: $background-grey;
                 margin: 20px 0px;
             }
 
-            .send-ok{
+            .send-ok {
                 display: block !important;
             }
 
-            .send{
+            .send {
                 position: absolute;
                 bottom: 110px;
                 width: 200px;
                 display: none;
-                p{
+
+                p {
                     font-size: $sizes-h6;
                     font-weight: 600;
                     color: $blue-primary;
@@ -97,5 +98,30 @@
         @include button($background-grey , $white-primary , 14px, fit-content, 10px 15px, block);
         box-shadow: generate-shadow($shadow-primary, 5);
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .gridConten {
+
+        display: block !important;
+
+        .infoContactFrom {
+
+            .send-ok {
+                display: block !important;
+                right: 25px !important;
+                bottom: 25px !important;
+                width: 130px !important;
+                p{
+                    font-size: 15px !important;
+                    font-weight: 400 !important;
+                }
+            }
+
+        }
+
+
     }
 }
