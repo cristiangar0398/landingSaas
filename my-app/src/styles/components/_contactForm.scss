@@ -1,0 +1,85 @@
+/* ======== global requirements ========*/
+@use '../global' as*;
+
+/* ======== Form styles ========*/
+
+.ContactForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .gridConten {
+
+        .infoContactFrom{
+            h4{
+                font-family: $font-roboto;
+                font-size: $sizes-h4;
+                color: $text-primary;
+            }
+
+            p{
+                font-size: $sizes-h6;
+                color: $background-grey;
+                margin: 20px 0px;
+            }
+        }
+
+        position: relative;
+        top: 20px;
+        width: 70%;
+        height: auto;
+        max-height: 100vh;
+        flex-direction: row;
+        padding-top: 100px;
+        background-color: white;
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow: generate-shadow($shadow-primary, 10);
+        @include generar-grid-custom(1fr 1.5fr, 3%);
+
+        form {
+
+            label {
+                display: grid;
+                margin: 10px auto;
+                color: $background-grey;
+                font-family: $font-bebas;
+            }
+
+            input,
+            textarea {
+                margin-top: 10px;
+                border: none;
+                border-radius: 10px;
+                padding: 10px;
+                font-family: $font-roboto;
+                box-shadow: generate-shadow($shadow-primary, 3);
+
+            }
+
+            button {
+                @include button($blue-primary , $white-primary , 18px, fit-content, 10px 15px, block);
+                box-shadow: generate-shadow($shadow-primary, 5);
+                margin: 30px 0px 0px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    #close-button {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        @include button($background-grey , $white-primary , 14px, fit-content, 10px 15px, block);
+        box-shadow: generate-shadow($shadow-primary, 5);
+        cursor: pointer;
+    }
+}
