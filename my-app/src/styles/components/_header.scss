@@ -6,7 +6,7 @@
 .sticky {
     @include center-fixed(1200px);
 
-    .navbar{
+    .navbar {
         border-radius: 0px 0px 30px 30px !important;
     }
 }
@@ -43,33 +43,7 @@ header {
             .navContent {
                 max-width: 800px;
                 @include span(2, 3);
-
-                ul {
-                    max-width: 90%;
-                    height: 80px;
-                    display: flex;
-                    justify-content: space-between;
-                    margin: auto;
-
-                    li {
-                        list-style: none;
-                        margin: auto;
-
-                        a {
-                            outline: none;
-                            text-decoration: none;
-                            color: $background-grey;
-                            font-family: $font-roboto;
-                        }
-
-                        a:hover {
-                            padding: 28px 0px;
-                            color: $blue-primary;
-                            border-bottom: solid $blue-primary;
-                            transition: height 0.3s ease;
-                        }
-                    }
-                }
+                @include NavItem($background-grey , $font-roboto , $blue-primary);
             }
 
             .nav-mobile {
@@ -120,7 +94,7 @@ header {
                     .menu-wrapper {
                         width: 100%;
                         height: 100%;
- 
+
                         .menu-contain {
                             img {
                                 display: none;

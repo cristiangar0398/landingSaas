@@ -50,7 +50,7 @@
     .gridContainer {
         @include generar-grid-custom(1fr 1fr, 5%);
         max-width: 1200px;
-        height: 1300px;
+        height: auto;
         margin: auto;
 
         #product-1 {
@@ -180,7 +180,7 @@
         .gridContainer {
             @include generar-grid-custom(1fr, 3%);
             max-width: 90%;
-            height: 1300px;
+            height: auto;
 
             #product-2 {
                 margin-top: 0px;

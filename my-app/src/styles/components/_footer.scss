@@ -1,0 +1,110 @@
+/* ======== global requirements ========*/
+@use '../global' as*;
+
+/* ======== footer styles ========*/
+footer {
+    width: 100%;
+    height: auto;
+    background: $blue-primary;
+
+    .gridContainer {
+        width: 100%;
+        height: 100%;
+        @include generar-grid-rows(3, 1fr, 5px);
+
+        .navItem {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            @include NavItem($white-primary , $font-roboto , $white-primary);
+        }
+
+        .mainSection {
+            width: 60%;
+            margin: auto;
+            padding: 50px 0px;
+            border-top: solid .2px $blue-secundary;
+            border-bottom: solid .2px $blue-secundary;
+
+            .social {
+                width: 80%;
+                margin: auto;
+                display: flex;
+                justify-content: space-around;
+
+                img {
+                    width: 40px;
+                }
+            }
+        }
+
+        .credits {
+            p {
+                padding-top: 60px;
+                font-size: $sizes-h5;
+                text-align: center;
+                color: $white-primary;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+
+        .gridContainer {
+
+            grid-template-rows: 300px 150px 150px;
+            .navItem {
+                width: 90%;
+                padding:20px 50px 0px;
+
+                ul {
+                    display: block !important;
+                    margin: auto;
+                    height: auto !important;
+
+                    li {
+                        text-align: center;
+                        padding: 10px 10% !important;
+                        list-style: none;
+                        margin: auto;
+
+                        a {
+                            outline: none;
+                            text-decoration: none;
+                            color: $white-primary;
+                            font-family: $font-roboto;
+                            font-size: $sizes-h6;
+                        }
+
+                    }
+                }
+            }
+
+            .mainSection {
+                width: 90%;
+
+                .social {
+                    width: 80%;
+                    margin: auto;
+                    display: flex;
+                    justify-content: space-around;
+
+                    img {
+                        width: 30px;
+                    }
+                }
+            }
+
+            .credits {
+                width: 80%;
+                margin: auto;
+                p{
+                    padding-top: 10px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
